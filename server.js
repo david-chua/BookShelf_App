@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 
-var app = epress();
+var app = express();
 
 app.use(express.static('public'));
 
