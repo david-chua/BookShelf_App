@@ -2,7 +2,7 @@ var User = require('../models/user.js');
 var bcrypt = require('bcrypt');
 
 function createSecure(req,res,next){
-  res.hashedPassword = bcrypt.hasSync(req.body.password, bcrypt.gensaltSync(10));
+  res.hashedPassword = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
   next();
 }
 
@@ -10,7 +10,7 @@ function loginUser(req,res,next){
   var email = req.body.email;
   var password = req.body.password;
 
-  User.findone({email: email})
+  User.findOne({email: email})
     .then(function(user){
       if(user == null) {
         res.json({status: 401, data: "User not found"})
