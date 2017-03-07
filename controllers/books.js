@@ -10,14 +10,14 @@ var Book = require('../models/book.js');
 
 // Book Index router
 router.get('/', auth.authorize, function(req,res){
-  Book.find({owner: req.params.id})
-  .exec(function(err, meals){
+  Book.find({owner: req.params._id})
+  .exec(function(err, books){
     if(err) {console.log(err);}
     res.json(books);
   })
 })
 //Create a Book Route
-router.post('/', auth.authorize, function(req,res){
+router.post('/',function(req,res){
   User.findById(req.params.id)
   .exec()
   .then(function(user){
@@ -34,10 +34,12 @@ router.post('/', auth.authorize, function(req,res){
         genre: req.body.genre,
         category: req.body.category,
         owner: req.params.id
-      })
-    })
-  })
-})
+      });
+      book.save();
+      res.json(book);
+    });
+  });
+});
 
 
 

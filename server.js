@@ -22,8 +22,10 @@ app.use(bodyParser.urlencoded({
 
 app.use(logger('dev'));
 
+
+// Cookie Config - from Colin Hart
 app.use(session({
-  secret: "readingfordays",
+  secret: "derpderpderpcats",
   resave: true,
   maxAge: 60 * 60 * 1000,
   saveUninitialized: false
