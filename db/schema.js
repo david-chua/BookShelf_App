@@ -11,7 +11,7 @@ var UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Book'
   }]
-};
+});
 
 var BookSchema = new Schema({
   name: String,
@@ -19,7 +19,9 @@ var BookSchema = new Schema({
   publisher: String,
   book_url: String,
   date_published: String,
-  onwer: {
+  genre: String,
+  category: String,
+  owner: {
     type: String,
     ref: 'User'
   }
@@ -52,6 +54,3 @@ module.exports = {
   Book: BookModel,
   User: UserModel
 }
-
-
-})
