@@ -14,11 +14,11 @@ var UserSchema = new Schema({
 });
 
 var BookSchema = new Schema({
-  name: String,
+  title: String,
   author: String,
   publisher: String,
-  book_url: String,
-  date_published: String,
+  book_img: String,
+  published_year: String,
   genre: String,
   category: String,
   owner: {
