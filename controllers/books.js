@@ -17,7 +17,7 @@ router.get('/', auth.authorize, function(req,res){
   })
 })
 //Create a Book Route
-router.post('/',function(req,res){
+router.post('/', auth.authorize, function(req,res){
   User.findById(req.params.id)
   .exec()
   .then(function(user){
@@ -29,7 +29,7 @@ router.post('/',function(req,res){
         title: req.body.title,
         author: req.body.author,
         publisher: req.body.publisher,
-        book_img: req.body.book_img,
+        book_img_url: req.body.book_img,
         published_year: req.body.published_year,
         genre: req.body.genre,
         category: req.body.category,
@@ -40,6 +40,28 @@ router.post('/',function(req,res){
     });
   });
 });
+
+
+//Update book router
+router.put('/:bookId', function(req,res){
+  Book.findById(req.params.bookId)
+  .exec()
+  .then(function(book){
+    book.title = req.body.title;
+    book.author = req.body.author;
+    book.publisher = req.body.publisher;
+    book.book_img_url = req.body.book_img_url;
+    book.published_year = req.body.published_year;
+    book.genre = req.body.genre;
+    book.category =  req.body.category;
+
+    book.save();
+    res.json(book);
+  })
+  .catch(function(err){
+    res.json(err);
+  })
+})
 
 
 
