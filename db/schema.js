@@ -7,7 +7,7 @@ var UserSchema = new Schema({
   name: String,
   email: String,
   password_digest: String,
-  books: [{
+  collected_books: [{
     type: Schema.Types.ObjectId,
     ref: 'Book'
   }]
@@ -17,11 +17,11 @@ var BookSchema = new Schema({
   title: String,
   author: String,
   publisher: String,
-  book_img: String,
+  book_img_url: String,
   published_year: String,
   genre: String,
   category: String,
-  owner: {
+  _owner: {
     type: String,
     ref: 'User'
   }

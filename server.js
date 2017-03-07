@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var usersController = require('./controllers/users.js');
 var booksController = require('./controllers/books.js');
 var sessionsController = require('./controllers/sessions.js');
+var seedsController = require('./controllers/seeds.js');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(session({
 app.use('/users', usersController);
 app.use('/users/:id/books', booksController);
 app.use('/sessions', sessionsController);
+app.use('/seeds', seedsController);
 
 
 var port = process.env.PORT || 3000;
