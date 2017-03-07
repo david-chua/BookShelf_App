@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 var UserSchema = new Schema({
   name: String,
   email: String,
-  pasword_digest: String,
+  password_digest: String,
   books: [{
     type: Schema.Types.ObjectId,
     ref: 'Book'
