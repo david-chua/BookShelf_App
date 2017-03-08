@@ -9,15 +9,16 @@
     <script src="scripts/usersController.js"></script>
     <script src="scripts/booksController.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Diplomata+SC|Lato" rel="stylesheet">
   </head>
-  <body>
+  <body ng-controller="usersController as users">
     <header>
       <nav>
-        <ul>
-          <li> Home </li>
-          <li> My Page</li>
-          <li> My Books</li>
-          <li> Contact</li>
+        <ul class="nav_ul">
+          <li class="links" ui-sref='home'> Home </li>
+          <li class="links" ui-sref='usershow'> My Page</li>
+          <li class="links" ui-sref='bookshow'> My Books</li>
+          <li class="links" ui-sref='contact'> Contact</li>
         </ul>
       </nav>
     </header>
