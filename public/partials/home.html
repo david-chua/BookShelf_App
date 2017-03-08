@@ -8,12 +8,12 @@
 
 
     <div id="login">
-      <form>
+      <form ng-submit="users.login(user)">
         <h2> Log-in now to see your book collection </h2>
         <label for="email"> Email: </label><br>
-        <input type="email" placeholder="Type in your email address"><br>
+        <input ng-model="user.email" type="email" placeholder="Type in your email address"><br>
         <labe for="password"> Password: </label><br>
-        <input type="password" placeholder="Whats' your password?"><br>
+        <input ng-model="user.password" type="password" placeholder="Whats' your password?"><br>
         <button class="log_in_button" type="submit" name="login"> Log Me In! </button>
         <h5> Not signed up yet? <span ui-sref='signup'> Click Here </span></h5>
       </form>

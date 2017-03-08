@@ -12,7 +12,7 @@ function usersController($http, $state, $scope){
     $http.post('/users', user)
       .then(function(response){
         console.log(response)
-        $state.go('login');
+        $state.go('home');
       })
   }
   function login(user){
@@ -21,11 +21,13 @@ function usersController($http, $state, $scope){
     .then(function(response){
       $scope.currentUser = response.data;
       console.log(response.data)
+      $state.go('usershow');
 
     })
   }
 
   self.signup = signup;
+  self.login = login;
 
 
 }
