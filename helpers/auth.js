@@ -30,7 +30,7 @@ function loginUser(req,res,next){
 function authorize(req,res,next){
   var user = req.session.currentUser;
 
-  if(!user || user.id !== req.params.id){
+  if(!user || user._id !== req.params.id){
     res.send({status: 401, data: "unauthorized access"})
   } else {
     next();

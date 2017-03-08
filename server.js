@@ -3,9 +3,9 @@ var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var sessionsController = require('./controllers/sessions.js');
 var usersController = require('./controllers/users.js');
 var booksController = require('./controllers/books.js');
-var sessionsController = require('./controllers/sessions.js');
 var seedsController = require('./controllers/seeds.js');
 
 var app = express();
