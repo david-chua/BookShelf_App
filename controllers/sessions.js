@@ -8,7 +8,6 @@ router.post('/login', auth.loginUser, function(req, res){
   console.log(req.session.currentUser);
   res.json({
     status: 200,
-    message: 'Ok',
     data: req.session.currentUser
   });
 });

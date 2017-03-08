@@ -19,8 +19,9 @@ function usersController($http, $state, $scope){
     console.log(user);
     $http.post('/sessions/login', user)
     .then(function(response){
-      $scope.currentUser = response.data;
+      $scope.currentUser = response.data.data;
       console.log(response.data)
+      console.log(user)
       $state.go('usershow');
     })
   }
