@@ -17,7 +17,7 @@ router.get('/', auth.authorize, function(req,res){
   })
 })
 //Create a Book Route
-router.post('/', function(req,res){
+router.post('/', auth.authorize, function(req,res){
   User.findById(req.params.id)
   .exec()
   .then(function(user){
@@ -43,7 +43,7 @@ router.post('/', function(req,res){
 
 
 //Update book router
-router.put('/:bookId', function(req,res){
+router.put('/:bookId', auth.authorize, function(req,res){
   Book.findById(req.params.bookId)
   .exec()
   .then(function(book){
@@ -65,7 +65,7 @@ router.put('/:bookId', function(req,res){
 });
 
 
-router.delete('/:bookId', function(req,res){
+router.delete('/:bookId', auth.authorize, function(req,res){
   Book.findByIdAndRemove(req.params.bookId, function(err){
     if(err) {res.send(err);}
     res.json({status: 200, data: "delete is a success"});
