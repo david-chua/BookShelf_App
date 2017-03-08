@@ -14,10 +14,6 @@ function BookAppRouter($stateProvider, $urlRouterProvider){
       url:'/signup',
       templateUrl: '/partials/signup.html'
     })
-    .state('login',{
-      url: '/login',
-      templateUrl: '/partials/login.html'
-    })
     .state('usershow',{
       url: '/users',
       templateUrl: '/partials/usershow.html'

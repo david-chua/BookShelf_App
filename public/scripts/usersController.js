@@ -22,12 +22,20 @@ function usersController($http, $state, $scope){
       $scope.currentUser = response.data;
       console.log(response.data)
       $state.go('usershow');
+    })
+  }
 
+  function signout(){
+    $http.delete('/sessions')
+    .then(function(response){
+      console.log(response);
+      $state.go('home');
     })
   }
 
   self.signup = signup;
   self.login = login;
+  self.signout = signout;
 
 
 }
