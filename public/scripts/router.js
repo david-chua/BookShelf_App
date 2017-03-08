@@ -1,4 +1,4 @@
-angular.module('TopShelfApp', ['ui.router'])
+angular.module('bookApp', ['ui.router'])
   .config(BookAppRouter);
 
 BookAppRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -23,11 +23,11 @@ function BookAppRouter($stateProvider, $urlRouterProvider){
       templateUrl: '/partials/usershow.html'
     })
     .state('bookshow',{
-      url:'/users/:userId/books'
+      url:'/users/:userId/books',
       templateUrl: '/partials/bookshow.html'
     })
     .state('contact',{
       url:'/contact',
       templateUrl: '/partials/contact.html'
     })
-};
+}

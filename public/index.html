@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html ng-app='TopShelfApp'>
+<html ng-app='bookApp'>
   <head>
     <meta charset="utf-8">
     <title> TopShelf Imaginations</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="scripts/booksController.js"></script>
-    <script src="scripts/usersController.js"></script>
     <script src="scripts/router.js"></script>
+    <script src="scripts/usersController.js"></script>
+    <script src="scripts/booksController.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li> Home </li>
-        <li> My Page</li>
-        <li> My Books</li>
-        <li> Contact</li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <ul>
+          <li> Home </li>
+          <li> My Page</li>
+          <li> My Books</li>
+          <li> Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <ui-view>
 
-{{2+2 }}
+    </ui-view>
+
   </body>
 </html>
