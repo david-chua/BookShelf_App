@@ -91,7 +91,7 @@ book_three.save(function(err){
   console.log("Book Three Created");
 })
 
-res.send('seeded');
+res.send('data seeded');
 
 })
 

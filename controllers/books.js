@@ -9,7 +9,7 @@ var Book = require('../models/book.js');
 
 
 // Book Index router
-router.get('/', auth.authorize, function(req,res){
+router.get('/', function(req,res){
   Book.find({owner: req.params._id})
   .exec(function(err, books){
     if(err) {console.log(err);}
@@ -17,7 +17,7 @@ router.get('/', auth.authorize, function(req,res){
   })
 })
 //Create a Book Route
-router.post('/', auth.authorize, function(req,res){
+router.post('/',  function(req,res){
   User.findById(req.params.id)
   .exec()
   .then(function(user){
@@ -43,7 +43,7 @@ router.post('/', auth.authorize, function(req,res){
 
 
 //Update book router
-router.put('/:bookId', auth.authorize, function(req,res){
+router.put('/:bookId', function(req,res){
   Book.findById(req.params.bookId)
   .exec()
   .then(function(book){
@@ -65,7 +65,7 @@ router.put('/:bookId', auth.authorize, function(req,res){
 });
 
 
-router.delete('/:bookId', auth.authorize, function(req,res){
+router.delete('/:bookId',function(req,res){
   Book.findByIdAndRemove(req.params.bookId, function(err){
     if(err) {res.send(err);}
     res.json({status: 200, data: "delete is a success"});
