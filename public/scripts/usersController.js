@@ -25,7 +25,7 @@ function usersController($http, $state, $scope){
     })
   }
 
-  self.singup = signup;
+  self.signup = signup;
 
 
 }
