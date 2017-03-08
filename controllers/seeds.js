@@ -50,7 +50,7 @@ var book_one = new Book({
   book_img_url: "https://upload.wikimedia.org/wikipedia/en/c/ce/Eragon_book_cover.png",
   published_year: "2002",
   genre: "Young adult",
-  category: "I need to read this",
+  category: "I_need_to_read_this",
   _owner: user_one.id
 });
 
@@ -66,9 +66,9 @@ var book_two = new Book({
   book_img_url: "http://cdn.collider.com/wp-content/uploads/fantastic-beasts-and-where-to-find-them-book.jpg",
   published_year: "2001",
   genre: "Fantasy",
-  category: "I love this book",
+  category: "I_love_this_book",
   _owner: user_one.id
-})
+});
 
 book_two.save(function(err){
   if(err) {console.log(err);}
@@ -82,9 +82,9 @@ var book_three = new Book({
   book_img_url: "http://images.gr-assets.com/books/1473220440l/31549906.jpg",
   published_year: "2016",
   genre: "Historical Fiction",
-  category: "Not for me",
+  category: "Not_for_me",
   _owner: user_two.id
-})
+});
 
 book_three.save(function(err){
   if(err) {console.log(err);}

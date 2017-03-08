@@ -69,9 +69,10 @@ router.delete('/:bookId', function(req,res){
   Book.findByIdAndRemove(req.params.bookId, function(err){
     if(err) {res.send(err);}
     res.json({status: 200, data: "delete is a success"});
-  })
-} )
+  });
+});
 
 
+//ADD THE auth.authorize function later
 
 module.exports = router;
