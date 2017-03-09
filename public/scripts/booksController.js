@@ -14,6 +14,14 @@ function booksController($http, $state, $scope){
     })
   }
 
+  // function MyBooks(){
+  //   $http.get(`/users/${$scope.currentUser._id}/books`)
+  //   .then(function(response){
+  //     self.mybooks = response.data;
+  //     console.log(self.mybooks;)
+  //   })
+  // }
+
   self.AddBook = false;
   self.newBook = newBook;
 }
