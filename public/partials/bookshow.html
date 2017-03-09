@@ -19,7 +19,7 @@
 
   <section class="show_div">
 
-    <div class="Book_Info" ng-hide="books.EditBookForm">
+    <div class="Book_Info">
       <h1> Book Information </h1>
       <h3>Title: {{books.oneBook.title}} </h3>
       <p>Author: {{books.oneBook.author}}</p>
@@ -27,19 +27,19 @@
       <p>Year Published: {{books.oneBook.published_year}}</p>
       <p>Genre: {{books.oneBook.genre}}</p>
       <p>My Book Category: {{books.oneBook.category}}</p>
-      <button> Edit This Book </button>
+      <button ng-click="books.EditBookForm = !books.EditBookForm" name="EditBook"> Edit This Book </button>
     <div>
 
-    <div class="User_Container">
-        <form ng-submit="books.EditBook(book)" ng-show="books.EditBookForm" >
+    <div class="User_Container"  ng-show="books.EditBookForm">
+        <form ng-submit="books.updateBook(books.oneBook)">
           <h3 ng-submit=""> Edit This Book </h3>
-          <input ng-model="book.title" type="text" name="title" placeholder="book title"><br>
-          <input ng-model="book.author" type="text" name="author" placeholder="author"><br>
-          <input ng-model="book.publisher" type="text" name="publisher" placeholder="publisher"><br>
-          <input ng-model="book.book_img_url" type="text" name="book_img_url" placeholder="book image url"><br>
-          <input ng-model="book.published_year" type="text" name="published_year" placeholder="year published"><br>
-          <input ng-model="book.genre" type="text" name="genre" placeholder="genre"><br>
-          <select ng-model="book.category">
+          <input ng-model="books.oneBook.title" type="text" name="title" placeholder="book title"><br>
+          <input ng-model="books.oneBook.author" type="text" name="author" placeholder="author"><br>
+          <input ng-model="books.oneBook.publisher" type="text" name="publisher" placeholder="publisher"><br>
+          <input ng-model="books.oneBook.book_img_url" type="text" name="book_img_url" placeholder="book image url"><br>
+          <input ng-model="books.oneBook.published_year" type="text" name="published_year" placeholder="year published"><br>
+          <input ng-model="books.oneBook.genre" type="text" name="genre" placeholder="genre"><br>
+          <select ng-model="books.oneBook.category">
               <option ng-repeat="x in category"> {{x}} </option>
           </select><br>
           <input type="submit">

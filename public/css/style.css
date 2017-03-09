@@ -222,7 +222,8 @@ ul li:nth-child(4){
   /*margin-right: 20%;*/
   height: 50%;
   width: 36%;
-  background-color: rgb(36,99,190)
+  background-color: rgb(36,99,190);
+  overflow: auto;
 
 }
 
