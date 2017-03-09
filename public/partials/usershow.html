@@ -5,11 +5,23 @@
   </div>
 <button ng-click="users.signout()" class="sign_out_button"> Sign Out </button>
 <div class="Add">
-  <h1 ng-click=""> Add a Book </h1>
+  <h1 ng-click="books.AddBook = !books.AddBook" name="addBook"> Add a Book </h1>
 </div>
 
 <div class="User_Container">
-  <h1> Render Stuff Here </h1>
+    <form ng-submit="books.newBook(book)" ng-show="books.AddBook" >
+      <h3 ng-submit=""> Add A Book </h3>
+      <input ng-model="book.name" type="text" name="title" placeholder="book title"><br>
+      <input ng-model="book.author" type="text" name="author" placeholder="author"><br>
+      <input ng-model="book.publisher" type="text" name="publiser" placeholder="publisher"><br>
+      <input ng-model="book.book_image_url" type="text" name="book_img_url" placeholder="book image url"><br>
+      <input ng-model="book.published_year" type="text" name="published_year" placeholder="year published"><br>
+      <input ng-model="book.genre" type="text" name="genre" placeholder="genre"><br>
+      <select ng-model="book.category">
+          <option ng-repeat="x in category"> {{x}} </option>
+      </select><br>
+      <input type="submit">
+    </form>
 </div>
 
 <section class="Book_Category">
