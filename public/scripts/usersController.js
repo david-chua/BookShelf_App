@@ -7,22 +7,20 @@ function usersController($http, $state, $scope){
   console.log('usersController is working')
 
   function signup(user){
-    console.log("sign me up")
-    console.log(user)
+    console.log(user);
     $http.post('/users', user)
-      .then(function(response){
-        console.log(response)
-        $state.go('home');
+      .then(function(response) {
+        $state.go('login');
       })
   }
+
   function login(user){
-    console.log(user);
-    $http.post('/sessions/login', user)
+  console.log(user);
+  $http.post('/sessions/login', user)
     .then(function(response){
       $scope.currentUser = response.data.data;
-      console.log(response.data)
-      console.log(user)
-      $state.go('usershow');
+      console.log(response.data.data)
+        $state.go('usershow');
     })
   }
 

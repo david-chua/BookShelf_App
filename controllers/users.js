@@ -5,7 +5,7 @@ var auth = require('../helpers/auth.js');
 var User = require('../models/user.js');
 
 
-router.post('/', auth.createSecure, function(req,res){
+router.post('/', auth.createSecure, function(req, res){
   var user = new User({
     name: req.body.name,
     email: req.body.email,
@@ -18,7 +18,6 @@ router.post('/', auth.createSecure, function(req,res){
     res.json(user)
   });
 
-})
-
+});
 
 module.exports = router;
