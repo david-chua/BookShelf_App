@@ -5,7 +5,7 @@ BookAppRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function BookAppRouter($stateProvider, $urlRouterProvider){
   console.log("app router is working");
-  // This portion will allow any unrecognized url to render the home state. 
+  // This portion will allow any unrecognized url to render the home state.
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('home', {
@@ -21,7 +21,7 @@ function BookAppRouter($stateProvider, $urlRouterProvider){
       templateUrl: '/partials/usershow.html'
     })
     .state('bookshow',{
-      url:'/users/:userId/books',
+      url:'/book',
       templateUrl: '/partials/bookshow.html'
     })
     .state('contact',{

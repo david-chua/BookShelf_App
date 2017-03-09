@@ -1,6 +1,16 @@
-<div class="bookshow">
+<div ng-controller="booksController as books" class="bookshow">
+
+
   <div class="appname">
     <h1> TopShelf Imagination </h1>
   </div>
   <button ng-click="users.signout()" class="sign_out_button"> Sign Out </button>
+
+<div ng-repeat="book in books.mybooks" class="book_index">
+        <h3> {{book.title}} </h3>
+        <h4> {{book.author}} </h4>
+        <img src="{{book.book_img_url}}">
+        <h4> {{book.genre}}</h4>
+
+</div>
 </div>
