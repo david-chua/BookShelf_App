@@ -29,7 +29,7 @@ router.post('/', auth.authorize, function(req,res){
         title: req.body.title,
         author: req.body.author,
         publisher: req.body.publisher,
-        book_img_url: req.body.book_img,
+        book_img_url: req.body.book_img_url,
         published_year: req.body.published_year,
         genre: req.body.genre,
         category: req.body.category,

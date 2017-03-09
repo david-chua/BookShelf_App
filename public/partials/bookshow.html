@@ -6,11 +6,31 @@
   </div>
   <button ng-click="users.signout()" class="sign_out_button"> Sign Out </button>
 
-<div ng-repeat="book in books.mybooks" class="book_index">
+  <div ng-repeat="book in books.mybooks" class="book_index">
         <h3> {{book.title}} </h3>
         <h4> {{book.author}} </h4>
-        <img src="{{book.book_img_url}}">
         <h4> {{book.genre}}</h4>
+        <button ng-click="books.deleteBook(book)" type="button">Delete</button>
+        <button ng-click="books.getBook(book)" type="button">Show Full Information</button>
 
+  </div>
 </div>
-</div>
+
+<section>
+  <div class="User_Container">
+      <form ng-submit="books.EditBook(book)" ng-show="books.EditBookForm" >
+        <h3 ng-submit=""> Add A Book </h3>
+        <input ng-model="book.title" type="text" name="title" placeholder="book title"><br>
+        <input ng-model="book.author" type="text" name="author" placeholder="author"><br>
+        <input ng-model="book.publisher" type="text" name="publisher" placeholder="publisher"><br>
+        <input ng-model="book.book_img_url" type="text" name="book_img_url" placeholder="book image url"><br>
+        <input ng-model="book.published_year" type="text" name="published_year" placeholder="year published"><br>
+        <input ng-model="book.genre" type="text" name="genre" placeholder="genre"><br>
+        <select ng-model="book.category">
+            <option ng-repeat="x in category"> {{x}} </option>
+        </select><br>
+        <input type="submit">
+      </form>
+  </div>
+
+</section>

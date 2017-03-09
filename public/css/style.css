@@ -206,6 +206,11 @@ ul li:nth-child(4){
   height: 100%
 }
 
+.book_image{
+  height: 400px;
+  width: 250px;
+}
+
 /*contact page*/
 .contact{
   background: rgb(228,108,10);

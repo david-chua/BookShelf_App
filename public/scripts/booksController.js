@@ -25,11 +25,26 @@ function booksController($http, $state, $scope){
     $http.post(`/users/${$scope.currentUser._id}/books`, book)
     .then (function(response) {
     console.log(response)
-      $state.go('usershow');
+      $state.go('bookshow');
     })
+  }
+//delete book route
+  function deleteBook(book){
+    $http.delete(`/users/${$scope.currentUser._id}/books/${book._id}`)
+    .then(function(response){
+      console.log(response);
+      $state.reload();
+    })
+  }
+
+  function updateBook(book){
+
   }
 
 
   self.AddBook = false;
+  self.EditBookForm = false;
   self.newBook = newBook;
+  self.deleteBook = deleteBook;
+  self.updateBook= updateBook;
 }
