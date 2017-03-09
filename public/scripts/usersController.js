@@ -10,7 +10,7 @@ function usersController($http, $state, $scope){
     console.log(user);
     $http.post('/users', user)
       .then(function(response) {
-        $state.go('login');
+        $state.go('home');
       })
   }
 

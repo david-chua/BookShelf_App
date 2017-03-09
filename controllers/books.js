@@ -10,7 +10,8 @@ var Book = require('../models/book.js');
 
 // Book Index router
 router.get('/', auth.authorize, function(req,res){
-  Book.find({owner: req.params._id})
+  console.log(req.params._id)
+  Book.find({_owner: req.params._id})
   .exec(function(err, books){
     if(err) {console.log(err);}
     res.json(books);
