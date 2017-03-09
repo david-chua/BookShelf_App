@@ -12,7 +12,7 @@ var app = express();
 
 app.use(express.static('public'));
 
-var mongoURI = process.env.MONGODB_URI || "mongodb://localhost/bookshelf_app"
+var mongoURI = process.env.MONGODB_URI|| process.env.MONGOLAB_URI || "mongodb://localhost/bookshelf_app"
 mongoose.connect(mongoURI);
 
 app.use(bodyParser.json());
@@ -38,6 +38,7 @@ app.use('/seeds', seedsController);
 
 
 var port = process.env.PORT || 3000;
+
 app.listen(port, function(){
   console.log("My Book Collection Works!!");
 });
