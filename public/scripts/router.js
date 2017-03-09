@@ -5,6 +5,8 @@ BookAppRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function BookAppRouter($stateProvider, $urlRouterProvider){
   console.log("app router is working");
+  // This portion will allow any unrecognized url to render the home state. 
+  $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('home', {
       url: '/',
