@@ -16,6 +16,16 @@ router.get('/', auth.authorize, function(req,res){
     res.json(books);
   })
 })
+
+//Get One Book
+router.get('/:bookId', auth.authorize, function(req,res){
+  Book.findById(req.params.bookId)
+  .exec(function(err, book){
+    if(err){res.send(err);}
+    res.json(book);
+  })
+})
+
 //Create a Book Route
 router.post('/', auth.authorize, function(req,res){
   User.findById(req.params.id)

@@ -37,8 +37,13 @@ function booksController($http, $state, $scope){
     })
   }
 
-  function updateBook(book){
-
+  //show one book
+  function showOne(book){
+    $http.get(`/users/${$scope.currentUser._id}/books/${book._id}`)
+    .then(function(response){
+      self.thatBook = response.data;
+      console.log(thatBook);
+    })
   }
 
 
@@ -46,5 +51,5 @@ function booksController($http, $state, $scope){
   self.EditBookForm = false;
   self.newBook = newBook;
   self.deleteBook = deleteBook;
-  self.updateBook= updateBook;
+  // self.updateBook= updateBook;
 }
