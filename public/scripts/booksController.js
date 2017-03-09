@@ -11,6 +11,7 @@ function booksController($http, $state, $scope){
 
   //get function for getting all books
   function GetMyBooks(){
+    console.log($scope.currentUser)
     $http.get(`/users/${$scope.currentUser._id}/books`)
     .then(function(response){
       self.mybooks = response.data;
